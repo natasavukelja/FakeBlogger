@@ -1,0 +1,114 @@
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.buttons{
+    display: flex;
+
+}
+.table-button{
+    background-color: #009879;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    color:white;
+    cursor: pointer;
+}
+.table-button:hover{
+    background-color: #014437;
+
+}
+
+#body{
+    width: 35%;
+}
+#title{
+    width: 35%;
+}
+
+.example-full-width{
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+}
+@media only screen and (max-width: 760px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+        left: -9999px;
+        font-weight: bold!important;
+
+	}
+	
+	tr { border: 1px solid #ccc; }
+	th{
+        font-weight: bold!important;
+    }
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 20%!important; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "User Id:"; }
+	td:nth-of-type(2):before { content: "ID:"; }
+	td:nth-of-type(3):before { content: "title:"; }
+	td:nth-of-type(4):before { content: "body:"; }
+
+}

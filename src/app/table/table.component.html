@@ -1,0 +1,31 @@
+<mat-form-field class="example-full-width">
+        <mat-label>Pretraga</mat-label>
+        <input matInput  (input)="change($event)">
+    </mat-form-field>
+<table class="styled-table" *ngIf="bloggData && bloggData.length>0">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>ID</th>
+            <th id="title">Title</th>
+            <th id="body">Body</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let blogg of bloggData">
+                <td>{{blogg.userId}}</td>
+                <td>{{blogg.id}}</td>
+                <td>{{blogg.title}}</td>
+                <td>{{blogg.body}}</td>
+                <td class="buttons">
+                    <button class="table-button" (click)="edit(blogg.id)">EDIT</button>
+                    <button class="table-button" (click)="delete(blogg.id)">DELETE</button>
+                </td>
+        </tr>
+      
+    </tbody>
+</table>
+<div *ngIf="bloggData && bloggData.length == 0">
+    Ne postoji blog sa unesenim nazivom
+</div>

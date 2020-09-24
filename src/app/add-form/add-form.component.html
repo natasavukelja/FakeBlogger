@@ -1,0 +1,20 @@
+<div class="form-header">Dodaj post <button mat-button class="close-button" (click)="close()">close</button> </div>
+<form class="example-form" [formGroup]="addForm">
+    <div class="form-fields">
+        <mat-form-field class="example-full-width">
+            <mat-label>User Id</mat-label>
+            <input matInput placeholder="Unesite svoj id" formControlName="userId">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Unesite naslov" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Body</mat-label>
+            <textarea matInput placeholder="Unesite tekst posta" rows="5" formControlName="body"></textarea>
+        </mat-form-field>
+    </div>
+
+    <button mat-button class="close-button" (click)="send()">Sacuvaj</button>
+
+</form>
